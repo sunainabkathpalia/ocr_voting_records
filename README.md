@@ -5,12 +5,12 @@ The goal of this project is to automate the extraction and structuring of histor
 
 ## Repository Structure
 ```
-??? example_ocr.ipynb             # Example OCR with visualisation on a single image
-??? batch_extraction.ipynb        # Batch extraction of all images 
-??? Pictures_1972/                # png exports of original pdfs
-?   ??? *.png
-??? output/                       # Folder containing results
-      ??? combined_output.csv       
+├── example_ocr.ipynb             # Example OCR with visualisation on a single image
+├── batch_extraction.ipynb        # Batch extraction of all images 
+├── Pictures_*/                # png exports of original pdfs
+│   └── *.png
+└── output/                       # Folder containing results
+    └── combined_output.csv       # Folder containing results     
 
 ```
 
@@ -19,14 +19,14 @@ The goal of this project is to automate the extraction and structuring of histor
 - **example_ocr.ipynb**  
   Demonstrates OCR on a single PNG page with visualizations:
   1. Reads and enhances contrast of one image.  
-  2. Sends the image to Google Cloud Vision via LayoutParser.  
-  3. Filters text blocks by column-specific bounding rectangles.  
+  2. Sends the image to Google Cloud Vision via layout parser.  
+  3. Filters text blocks by dynamic column-specific bounding rectangles.  
   4. Cluster words into rows.  
   5. Aligns columns (position, name, party, votes) into a table. 
-  6. -Adds metadata like municipality and year from the file path 
+  6. Adds metadata like municipality and year from the file path 
 
 - **batch_extraction.ipynb**  
-  Scales the same workflow to all images in `Pictures_1972/`:
+  Scales the same workflow to all images in pictures folder:
   1. Iterates through all png files
   2. Combines all tables into one.  
 
@@ -37,7 +37,7 @@ The goal of this project is to automate the extraction and structuring of histor
   - `name`: Candidate name  
   - `party`: Party affiliation  
   - `votes`: Votes received  
-  - `flag`: Quality flag (0 = regular elections, 1 =  no elections)  
+  - `flag`: election flag (0 = regular elections, 1 =  no elections)  
   - `municipality`: municipality name  
   - `year`: year of election
 
