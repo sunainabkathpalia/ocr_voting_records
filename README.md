@@ -17,18 +17,18 @@ The goal of this project is to automate the extraction and structuring of histor
 ## Code Overview
 
 - **example_ocr.ipynb**  
-  Demonstrates OCR on a single PNG page with visualizations:
-  1. Reads and enhances contrast of one image.  
-  2. Sends the image to Google Cloud Vision via layout parser.  
-  3. Filters text blocks by dynamic column-specific bounding rectangles.  
-  4. Cluster words into rows.  
-  5. Aligns columns (position, name, party, votes) into a table. 
-  6. Adds metadata like municipality and year from the file path 
+  Demonstrates OCR on a single png with visualizations:
+  - Reads and enhances contrast of one image.  
+  - Sends the image to Google Cloud Vision via layout parser.  
+  - Filters text blocks by dynamic column-specific bounding rectangles.  
+  - Cluster words into rows.  
+  - Aligns columns (position, name, party, votes) into a table. 
+  - Adds metadata municipality and year from the file path 
 
 - **batch_extraction.ipynb**  
   Scales the same workflow to all images in pictures folder:
-  1. Iterates through all png files
-  2. Combines all tables into one.  
+  - Iterates through all png files
+  - Combines all tables into one.  
 
 ## Output
 
